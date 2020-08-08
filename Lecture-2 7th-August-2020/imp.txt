@@ -1,3 +1,0 @@
-Two compilers
-JIT for testing on mobile
-AOT for deploying on playstore or appstore
