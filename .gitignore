@@ -2,3 +2,6 @@
 
 #all the lecture wise folders ignored
 Lecture*/
+
+#images directory
+Images/
