@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +22,14 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
+  int ld = 1, rd = 6;
+  void changeDice() {
+    setState(() {
+      ld = Random().nextInt(5) + 1;
+      rd = Random().nextInt(5) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -27,17 +37,28 @@ class _MainAppState extends State<MainApp> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Image.asset(
-              "assets/d1.png",
-              width: 250.0,
-              height: 150.0,
-            ),
+            child: FlatButton(
+                onPressed: () {
+                  changeDice();
+                },
+                child: Image.asset(
+                  "assets/d$ld.png",
+                  //width: 250.0,
+                  //height: 150.0,
+                  fit: BoxFit.fitWidth,
+                )),
           ),
           Expanded(
-            child: Image.asset(
-              "assets/d6.png",
-              width: 250.0,
-              height: 150.0,
+            child: FlatButton(
+              onPressed: () {
+                changeDice();
+              },
+              child: Image.asset(
+                "assets/d$rd.png",
+                //width: 250.0,
+                //height: 150.0,
+                fit: BoxFit.fitWidth,
+              ),
             ),
           ),
         ],
