@@ -1,5 +1,7 @@
 import 'package:custom_theme/CustomCard.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'Gender.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -15,10 +17,10 @@ class _MyAppState extends State<MyApp> {
           child: Row(
             children: [
               Expanded(
-                child: CustomCard(),
+                child: Gender(gen: "Male", icn_val: FontAwesomeIcons.mars),
               ),
               Expanded(
-                child: CustomCard(),
+                child: Gender(gen: "Female", icn_val: FontAwesomeIcons.venus),
               ),
             ],
           ),
